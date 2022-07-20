@@ -52,5 +52,24 @@
             }
         })
       </script>
+
+      <script>
+        $(document).ready(function (){
+            $('.number-student').on('change',function(){
+		    var val = $(this).val();
+            url = "sort";
+		    $.ajax({
+			    url: url,
+			    type: 'get',
+			    data: {
+				    sort_number: val
+			    },
+			    success: function(){
+				location.reload();
+			    }
+		    })
+	     });
+        })
+      </script>
 </body>
 </html>
