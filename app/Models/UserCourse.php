@@ -17,4 +17,9 @@ class UserCourse extends Model
         'user_id',
         'status',
     ];
+
+    public function scopeCountUserHaveLearn($query)
+    {
+        return $query->select('user_id')->groupBy('user_id')->get()->count();
+    }
 }

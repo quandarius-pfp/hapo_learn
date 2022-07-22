@@ -33,22 +33,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         $('.owl-carousel').owlCarousel({
-  
-  margin:30,
-  // nav:true,
-  dot:false, 
-  responsive:{
-      0:{
-          items:1
-      },
-      600:{
-          items:1
-      },
-      1000:{
-          items:2
-      }
-  }
-})
+            margin : 30,
+            loop : false,
+            nav : true,
+            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+
+                600:{
+                    items:1
+                },
+
+                1000:{
+                    items:2
+                }
+            }
+        })
+      </script>
+
+      <script>
+        $(document).ready(function (){
+            $('.number-student').on('change',function(){
+		    var val = $(this).val();
+            url = "sort";
+		    $.ajax({
+			    url: url,
+			    type: 'get',
+			    data: {
+				    sort_number: val
+			    },
+			    success: function(){
+				location.reload();
+			    }
+		    })
+	     });
+        })
       </script>
 </body>
 </html>

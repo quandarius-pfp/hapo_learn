@@ -9,23 +9,23 @@
                Courses
             </div>
             <div class="list-item-number">
-                1,5894
+                {{ $countCourse }}
             </div>
         </div>
         <div class="list-item">
             <div class="list-items-title">
-                Courses
+                Lessons
             </div>
             <div class="list-item-number">
-                1,5894
+                {{ $countlesson }}
             </div>
         </div>
         <div class="list-item">
             <div class="list-items-title">
-                Courses
+                Learner
             </div>
             <div class="list-item-number">
-                1,5894
+                {{ $countUserLearn }}
            </div>
         </div>
     </div>

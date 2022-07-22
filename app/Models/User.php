@@ -52,7 +52,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Course::class, 'user_id', 'user_id', 'course_id');
     }
-    
+
     public function lessons()
     {
         return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
@@ -61,5 +61,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany(Comment::class, 'user_id');
+    }
+
+    public function scopeGetTeacher($query)
+    {
+        return $query->where('role', config('roles.teacher'))->orderBy('id',config('course.sort_from_high_to_low'))->get();
     }
 }
